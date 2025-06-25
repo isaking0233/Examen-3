@@ -2,6 +2,23 @@
 
 Este repositorio contiene un Data Warehouse para análisis de rendimiento académico y una API REST en Django para exponer métricas clave.
 
+## 📄 Documento de Propuesta (Fase 1)
+
+En el archivo `Documentacion examen.pdf` encontrarás el documento de propuesta que cubre:
+
+1. **Dominio y Problema**  
+   - Análisis de rendimiento académico  
+   - Justificación para usar un Data Warehouse  
+
+2. **Preguntas de Negocio**  
+   1. Evolución del promedio por carrera en los últimos 8 semestres  
+   2. Asignaturas con mayor tasa de reprobación por departamento y semestre  
+   3. Distribución de calificaciones (A–F) por modalidad (presencial vs. en línea)  
+
+3. **Esquema Conceptual en Estrella**  
+   - Diagrama ER con una tabla de hechos (`FactCalificaciones`) y 5 dimensiones (`DimTiempo`, `DimEstudiante`, `DimAsignatura`, `DimProfesor`, `DimModalidad`)  
+
+
 ## 📚 Fases del proyecto
 
 1. **Fase 1 – Propuesta**  
@@ -26,6 +43,7 @@ Este repositorio contiene un Data Warehouse para análisis de rendimiento acadé
    ![Frontend](capturas/img3.5.png)
 4. **Fase 4 – Orquestación**  
    - Docker Compose para PostgreSQL 14 + Django.
+   ![Docker](capturas/img4.png)
 
 ## ⚙️ Requisitos
 
