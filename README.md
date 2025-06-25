@@ -15,11 +15,15 @@ Este repositorio contiene un Data Warehouse para análisis de rendimiento acadé
    ![Poblar database](capturas/img2.png)
 3. **Fase 3 – API Backend**  
    - Django + Django REST Framework.  
-   - Endpoints para consultas analíticas y carga/actualización de datos. 
+   - Endpoints para consultas analíticas y carga/actualización de datos.
+        curl http://127.0.0.1:8000/api/analytics/average-per-career/
+        curl http://127.0.0.1:8000/api/analytics/grade-distribution/
+        curl http://127.0.0.1:8000/api/analytics/reprobation-rate/
    ![Endpoint 1](capturas/img3.1.png) 
    ![Endpoint 2](capturas/img3.2.png)
    ![Endpoint 3](capturas/img3.3.png)
    ![Terminal](capturas/img3.4.png)
+   ![Frontend](capturas/img3.5.png)
 4. **Fase 4 – Orquestación**  
    - Docker Compose para PostgreSQL 14 + Django.
 
@@ -35,3 +39,5 @@ Este repositorio contiene un Data Warehouse para análisis de rendimiento acadé
    ```bash
    git clone <https://github.com/isaking0233/Examen-3>
    cd Examen 3
+   docker-compose up --build -d
+
