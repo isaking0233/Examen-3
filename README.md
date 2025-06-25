@@ -31,11 +31,14 @@ En el archivo `Documentacion examen.pdf` encontrarás el documento de propuesta 
    ![Instalaciones](capturas/img1.png)
    ![Poblar database](capturas/img2.png)
 3. **Fase 3 – API Backend**  
-   - Django + Django REST Framework.  
-   - Endpoints para consultas analíticas y carga/actualización de datos.
-        curl http://127.0.0.1:8000/api/analytics/average-per-career/
-        curl http://127.0.0.1:8000/api/analytics/grade-distribution/
-        curl http://127.0.0.1:8000/api/analytics/reprobation-rate/
+   - Django + DRF conectado al DW.  
+- Endpoints:  
+  - `POST /api/load-data/`  
+  - `GET /api/analytics/average-per-career/`  
+  - `GET /api/analytics/reprobation-rate/`  
+  - `GET /api/analytics/grade-distribution/`  
+  - `PUT /api/dimension/<dimensión>/<id>/`
+  - Tambien se puede usar curl en lugar de GET
    ![Endpoint 1](capturas/img3.1.png) 
    ![Endpoint 2](capturas/img3.2.png)
    ![Endpoint 3](capturas/img3.3.png)
