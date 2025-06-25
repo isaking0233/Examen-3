@@ -1,0 +1,51 @@
+version: '3.8'   # aquí va la versión del spec de Compose, no "name"
+
+services:
+  db:
+    image: postgres:14
+    container_name: dw-postgres
+    environment:
+      POSTGRES_DB: mi_dw
+      POSTGRES_USER: dw_user
+      POSTGRES_PASSWORD: secreto123
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  web:
+    build: .
+    container_name: dw-django
+    working_dir: /usr/src/app
+    environment:
+      POSTGRES_DB: mi_dw
+      POSTGRES_USER: dw_user
+      POSTGRES_PASSWORD: secreto123
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    command: >
+      sh -c "python manage.py migrate &&
+             python poblar_dw.py &&
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/usr/src/app
+    depends_on:
+      - db
+  
+  frontend:
+    image: nginx:alpine
+    container_name: examen3-frontend
+    ports:
+      - "3000:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - web
+
+
+volumes:
+  db_data:
+
