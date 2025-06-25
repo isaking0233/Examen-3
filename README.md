@@ -33,12 +33,16 @@ En el archivo `Documentacion examen.pdf` encontrarás el documento de propuesta 
 3. **Fase 3 – API Backend**  
    - Django + DRF conectado al DW.  
 - Endpoints:  
-  - `POST /api/load-data/`  
+  - `POST /api/load-data/`
+  - Ejemplo:
+    ![Endpoint post](capturas/img3.0.png) 
+  - `PUT /api/dimension/<dimensión>/<id>/`
+  - Ejemplo:
+  - ![Endpoint put](capturas/img3.01.png)
   - `GET /api/analytics/average-per-career/`  
   - `GET /api/analytics/reprobation-rate/`  
-  - `GET /api/analytics/grade-distribution/`  
-  - `PUT /api/dimension/<dimensión>/<id>/`
-  - Tambien se puede usar curl en lugar de GET
+  - `GET /api/analytics/grade-distribution/`
+  - Ejemplo:
    ![Endpoint 1](capturas/img3.1.png) 
    ![Endpoint 2](capturas/img3.2.png)
    ![Endpoint 3](capturas/img3.3.png)
