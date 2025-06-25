@@ -37,7 +37,7 @@ Este repositorio contiene un Data Warehouse para análisis de rendimiento acadé
 
 1. Clona el repo:
    ```bash
-   git clone <https://github.com/isaking0233/Examen-3>
+   git clone https://github.com/isaking0233/Examen-3
    cd Examen 3
    docker-compose up --build -d
 
